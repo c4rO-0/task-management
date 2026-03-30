@@ -20,7 +20,7 @@ task-management/
 │  └─ <session>.json
 └─ .agents/
    └─ skills/
-      └─ task-manager/
+      └─ task-state-management/
          └─ SKILL.md
 ```
 
@@ -62,13 +62,13 @@ Copy this repository structure into your target project root:
 your-project/
 ├─ AGENTS.md
 ├─ tools/task_state.py
-└─ .agents/skills/task-manager/SKILL.md
+└─ .agents/skills/task-state-management/SKILL.md
 ```
 
 Then in Codex, explicitly ask to use the skill:
 
 ```text
-Please use task-manager skill for this multi-step task.
+Please use task-state-management skill for this multi-step task.
 ```
 
 And set a session id in shell before running workflow commands:
@@ -83,13 +83,13 @@ python3 tools/task_state.py show --session "$TASK_SESSION_ID"
 If you want this skill available across repositories:
 
 ```bash
-mkdir -p ~/.codex/skills/task-manager
-cp .agents/skills/task-manager/SKILL.md ~/.codex/skills/task-manager/SKILL.md
+mkdir -p ~/.codex/skills/task-state-management
+cp .agents/skills/task-state-management/SKILL.md ~/.codex/skills/task-state-management/SKILL.md
 ```
 
 Recommended pattern:
 - keep `tools/task_state.py` in each project repo,
-- keep global `~/.codex/skills/task-manager/SKILL.md` as reusable instruction template.
+- keep global `~/.codex/skills/task-state-management/SKILL.md` as reusable instruction template.
 
 ## License
 

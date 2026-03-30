@@ -1,9 +1,9 @@
 ---
-name: task-manager
+name: task-state-management
 description: Maintain local JSON task state for multi-step work, prevent getting stuck on one bug, and ensure remaining tasks are not forgotten.
 ---
 
-# Task Manager Skill
+# Task State Management Skill
 
 Use this skill whenever:
 - the user asks for 2 or more tasks,
