@@ -48,6 +48,49 @@ python3 tools/task_state.py done --session "$TASK_SESSION_ID" --task T1 --text "
 python3 tools/task_state.py review --session "$TASK_SESSION_ID"
 ```
 
+## Codex Installation And Usage
+
+### 1) Prerequisite
+
+Install Codex CLI first (this repo provides the workflow/skill, not the CLI binary).
+
+### 2) Use directly inside a project (recommended)
+
+Copy this repository structure into your target project root:
+
+```text
+your-project/
+├─ AGENTS.md
+├─ tools/task_state.py
+└─ .agents/skills/task-manager/SKILL.md
+```
+
+Then in Codex, explicitly ask to use the skill:
+
+```text
+Please use task-manager skill for this multi-step task.
+```
+
+And set a session id in shell before running workflow commands:
+
+```bash
+export TASK_SESSION_ID=my_task_session
+python3 tools/task_state.py show --session "$TASK_SESSION_ID"
+```
+
+### 3) Install as global Codex skill (optional)
+
+If you want this skill available across repositories:
+
+```bash
+mkdir -p ~/.codex/skills/task-manager
+cp .agents/skills/task-manager/SKILL.md ~/.codex/skills/task-manager/SKILL.md
+```
+
+Recommended pattern:
+- keep `tools/task_state.py` in each project repo,
+- keep global `~/.codex/skills/task-manager/SKILL.md` as reusable instruction template.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
