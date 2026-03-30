@@ -1,0 +1,7 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Task-state runtime files (keep folder scaffold only)
+.task_state/*.json
+!.task_state/.gitkeep
